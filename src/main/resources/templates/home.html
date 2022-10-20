@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Stock Prices Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+<h1>Stock list</h1>
+
+<table>
+    <tr>
+        <th>Ticker</th>
+        <th>Date</th>
+        <th>Open</th>
+        <th>Close</th>
+    </tr>
+    <tr th:each="stock : ${stockStats}">
+        <td th:text="${stock.ticker}"></td>
+        <td th:text="${stock.date}"></td>
+        <td th:text="${stock.open}"></td>
+        <td th:text="${stock.close}"></td>
+    </tr>
+</table>
+
+</body>
+
+</html>
